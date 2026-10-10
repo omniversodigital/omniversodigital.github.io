@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum Vitae — Jean Carlo Ferreira | Principal Systems Architect & Lead AI Engineer</title>
+  <meta name="description" content="Official Curriculum Vitae of Jean Carlo Ferreira. Principal Systems Architect & Lead AI Engineer with 17+ years of experience based in Madeira, Portugal.">
+  <meta name="theme-color" content="#0a0c16">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg: #0a0c16;
+      --card-bg: #111424;
+      --border: #1e243d;
+      --text-main: #f0f3ff;
+      --text-muted: #94a3b8;
+      --accent: #6366f1;
+      --accent-light: #818cf8;
+      --cyan: #06b6d4;
+      --emerald: #10b981;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .toolbar {
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .toolbar-left, .toolbar-right {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      font-family: var(--font-sans);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #4f46e5, #06b6d4);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      opacity: 0.95;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(79, 70, 229, 0.4);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--border);
+      color: var(--text-main);
+    }
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+    }
+
+    .cv-container {
+      max-width: 900px;
+      width: 100%;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    /* CV Header */
+    .header {
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .candidate-name {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .candidate-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--cyan);
+      margin-top: 0.25rem;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: 9999px;
+      color: var(--emerald);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 8px var(--emerald);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.75rem 1.5rem;
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-item a {
+      color: var(--accent-light);
+      text-decoration: none;
+      word-break: break-all;
+    }
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 2.25rem;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-light);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding-bottom: 0.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    p.summary {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* Skills Grid */
+    .skills-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-category {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem;
+    }
+
+    .category-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-tag {
+      font-size: 0.75rem;
+      font-family: var(--font-mono);
+      padding: 0.2rem 0.5rem;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.25);
+      border-radius: 4px;
+      color: #c7d2fe;
+    }
+
+    /* Projects & Experience */
+    .exp-item {
+      margin-bottom: 1.75rem;
+    }
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .exp-role {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .exp-org {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .exp-dates {
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+
+    .exp-bullets {
+      list-style-type: disc;
+      padding-left: 1.25rem;
+      margin-top: 0.5rem;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+    }
+
+    .exp-bullets li {
+      margin-bottom: 0.4rem;
+    }
+
+    .repo-link {
+      color: var(--cyan);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .repo-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Education */
+    .edu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .degree-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .university {
+      color: var(--cyan);
+      font-size: 0.9rem;
+    }
+
+    .edu-date {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #111827 !important;
+        padding: 0 !important;
+      }
+      .toolbar {
+        display: none !important;
+      }
+      .cv-container {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+        background: #ffffff !important;
+      }
+      .candidate-name {
+        color: #0f172a !important;
+      }
+      .candidate-title {
+        color: #2563eb !important;
+      }
+      .section-title {
+        color: #1e3a8a !important;
+        border-bottom-color: #e2e8f0 !important;
+      }
+      p.summary, .exp-bullets, .exp-bullets li {
+        color: #334155 !important;
+      }
+      .exp-role, .degree-title {
+        color: #0f172a !important;
+      }
+      .skill-category {
+        background: #f8fafc !important;
+        border-color: #cbd5e1 !important;
+      }
+      .skill-tag {
+        background: #e2e8f0 !important;
+        color: #0f172a !important;
+        border-color: #cbd5e1 !important;
+      }
+      .contact-item a, .repo-link {
+        color: #2563eb !important;
+      }
+      .status-badge {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Controls Toolbar -->
+  <div class="toolbar">
+    <div class="toolbar-left">
+      <a href="index.html" class="btn btn-outline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        <span>Back to Interactive Portfolio</span>
+      </a>
+      <a href="https://github.com/omniversodigital" target="_blank" rel="noopener" class="btn btn-outline">
+        <span>GitHub Organization (22 Repos)</span>
+      </a>
+    </div>
+    <div class="toolbar-right">
+      <button onclick="window.print()" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2M6 14h12v8H6z"/></svg>
+        <span>Print / Save as PDF</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- CV Body -->
+  <div class="cv-container">
+    
+    <!-- Header -->
+    <header class="header">
+      <div class="header-top">
+        <div>
+          <h1 class="candidate-name">Jean Carlo Ferreira</h1>
+          <div class="candidate-title">Principal Systems Architect & Lead AI Engineer</div>
+        </div>
+        <div class="status-badge">
+          <span class="dot"></span>
+          <span>AVAILABLE FOR SENIOR REMOTE ROLES</span>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span>📍</span>
+          <span>Ribeira Brava, Madeira, Portugal (EU)</span>
+        </div>
+        <div class="contact-item">
+          <span>✉️</span>
+          <a href="mailto:jeancarlof@gmail.com">jeancarlof@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>🌐</span>
+          <a href="https://omniversodigital.github.io" target="_blank">omniversodigital.github.io</a>
+        </div>
+        <div class="contact-item">
+          <span>💼</span>
+          <a href="https://www.linkedin.com/in/jeancarlo-ferreira" target="_blank">linkedin.com/in/jeancarlo-ferreira</a>
+        </div>
+        <div class="contact-item">
+          <span>🐙</span>
+          <a href="https://github.com/omniversodigital" target="_blank">github.com/omniversodigital</a>
+        </div>
+        <div class="contact-item">
+          <span>⏱️</span>
+          <span>Timezone: UTC+0 / UTC+1 (WET / WEST)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Executive Summary -->
+    <section class="section">
+      <h2 class="section-title">Executive Summary</h2>
+      <p class="summary">
+        Principal Systems Architect and Lead AI Engineer with <b>17+ years of professional engineering experience</b> (Ingeniero en Informática, UNERG 2007) based in Madeira Island, Portugal. Track record architecting mission-critical distributed systems, agentic AI evaluation runtimes, institutional-grade quantitative trading engines, and cloud-native zero-trust topologies on Google Cloud Platform and AWS. Architect of the <b>Omniverso Digital</b> sovereign engineering ecosystem spanning 22 public production repositories. Specialized in bridging cutting-edge LLM orchestration, microsecond-latency compute (SIMD, Go, Rust, Solidity), and enterprise cloud infrastructure (Terraform, Kubernetes, BigQuery).
+      </p>
+    </section>
+
+    <!-- Core Competencies Matrix -->
+    <section class="section">
+      <h2 class="section-title">Core Competencies & Technical Stack</h2>
+      <div class="skills-matrix">
+        <div class="skill-category">
+          <div class="category-name">AI & Autonomous Agents</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Agentic Orchestration</span>
+            <span class="skill-tag">LLM Continuous Evals</span>
+            <span class="skill-tag">Computer Use API</span>
+            <span class="skill-tag">Whisper Real-Time STT</span>
+            <span class="skill-tag">Qdrant Vector DB</span>
+            <span class="skill-tag">Model Red-Teaming</span>
+            <span class="skill-tag">RAG Architecture</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="category-name">Cloud & Infrastructure (DevSecOps)</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Google Cloud Platform</span>
+            <span class="skill-tag">Terraform IaC</span>
+            <span class="skill-tag">Kubernetes (GKE)</span>
+            <span class="skill-tag">Cloud Run & Functions</span>
+            <span class="skill-tag">BigQuery Lakehouse</span>
+            <span class="skill-tag">Docker Containers</span>
+            <span class="skill-tag">GitHub Actions CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="category-name">Distributed Systems & Backend</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python 3.12 (FastAPI)</span>
+            <span class="skill-tag">Go (Microservices)</span>
+            <span class="skill-tag">gRPC & WebSockets</span>
+            <span class="skill-tag">PostgreSQL & Redis</span>
+            <span class="skill-tag">Pub/Sub & Kafka</span>
+            <span class="skill-tag">OPA Rego Policies</span>
+            <span class="skill-tag">Zero-Trust IAM</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="category-name">High-Performance & Quantitative Systems</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Solidity (Foundry)</span>
+            <span class="skill-tag">SIMD Optimization</span>
+            <span class="skill-tag">Flash Loan Arbitrage</span>
+            <span class="skill-tag">DeFi Multi-DEX Routing</span>
+            <span class="skill-tag">Quantitative DCF</span>
+            <span class="skill-tag">React 19 & Vite</span>
+            <span class="skill-tag">TypeScript</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience & Architectural Flagships -->
+    <section class="section">
+      <h2 class="section-title">Architectural Leadership & Flagship Deliverables</h2>
+
+      <!-- Omniverso Digital -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Principal Systems Architect & Lead Engineer</span> — 
+            <span class="exp-org">Omniverso Digital Ecosystem</span>
+          </div>
+          <span class="exp-dates">2020 – Present | Madeira, Portugal</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>Architected, developed, and deployed an end-to-end sovereign technology suite comprising <b>22 verified production repositories</b> across AI, distributed systems, quantitative finance, and infrastructure.</li>
+          <li><b>Agent Evals Engine (<a class="repo-link" href="https://github.com/omniversodigital/agent-evals-engine" target="_blank">omniversodigital/agent-evals-engine</a>):</b> Designed a continuous evaluation, safety benchmarking, and regression framework for conversational LLM agents with automated CI test execution and WhatsApp/CRM audit traces.</li>
+          <li><b>Sovereign Revenue Engine (<a class="repo-link" href="https://github.com/omniversodigital/sovereign-revenue-engine" target="_blank">omniversodigital/sovereign-revenue-engine</a>):</b> Built an institutional quantitative DeFi engine with 35 execution routers, sub-150µs SIMD vector operations, and multi-DEX flash-arbitrage routing across Base, Arbitrum, and Ethereum.</li>
+          <li><b>Enterprise GCP Lakehouse (<a class="repo-link" href="https://github.com/omniversodigital/cerebro-gcp-ecosystem" target="_blank">omniversodigital/cerebro-gcp-ecosystem</a>):</b> Implemented enterprise cloud-native architecture incorporating BigQuery analytics, Cloud Run serverless microservices, Pub/Sub event streams, and automated Terraform infrastructure modules.</li>
+          <li><b>Omniverso Infra (<a class="repo-link" href="https://github.com/omniversodigital/omniverso-infra" target="_blank">omniversodigital/omniverso-infra</a>):</b> Authored production Terraform IaC modules and Kubernetes GKE manifests enforcing zero-trust IAM, VPC peering, and multi-zone resilience.</li>
+          <li><b>Interview Copilot (<a class="repo-link" href="https://github.com/omniversodigital/interview-copilot" target="_blank">omniversodigital/interview-copilot</a>):</b> Developed low-latency real-time voice and technical interview copilot pairing OpenAI Whisper speech-to-text with WebSocket streaming and context retrieval.</li>
+          <li><b>Crypto Analytics Suite (<a class="repo-link" href="https://github.com/omniversodigital/crypto-dashboard" target="_blank">omniversodigital/crypto-dashboard</a>):</b> Engineered real-time portfolio tracking dashboard leveraging React 19, TypeScript, and Vite 8 with strict static typing and sub-second rendering.</li>
+        </ul>
+      </div>
+
+      <!-- Senior Engineering Track Record -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-role">Senior Systems & Software Engineer</span> — 
+            <span class="exp-org">Enterprise IT & Distributed Solutions</span>
+          </div>
+          <span class="exp-dates">2007 – 2020 | International & Remote</span>
+        </div>
+        <ul class="exp-bullets">
+          <li>13+ years of progressive software engineering, systems design, and technical leadership across telecommunications, cloud hosting, and enterprise automation.</li>
+          <li>Spearheaded modernization of legacy monolithic backends into decoupled Docker microservice architectures, reducing deployment downtime by 85%.</li>
+          <li>Engineered resilient SQL/NoSQL transactional database architectures (PostgreSQL, MySQL, Redis) serving high-concurrency client applications.</li>
+          <li>Designed secure REST and gRPC API gateways handling millions of daily requests with token-bucket rate limiting and distributed caching.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education & Credentials</h2>
+      <div class="edu-item">
+        <div>
+          <div class="degree-title">Ingeniero en Informática (Computer Systems Engineering)</div>
+          <div class="university">Universidad Nacional Experimental Rómulo Gallegos (UNERG)</div>
+        </div>
+        <div class="edu-date">Graduated: July 2007</div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="section">
+      <h2 class="section-title">Languages</h2>
+      <div class="skills-matrix">
+        <div class="skill-category">
+          <div class="category-name">Spanish</div>
+          <p style="font-size: 0.85rem; color: #cbd5e1;">Native / Bilingual</p>
+        </div>
+        <div class="skill-category">
+          <div class="category-name">Portuguese</div>
+          <p style="font-size: 0.85rem; color: #cbd5e1;">Fluent (Living & Operating in Madeira, Portugal)</p>
+        </div>
+        <div class="skill-category">
+          <div class="category-name">English</div>
+          <p style="font-size: 0.85rem; color: #cbd5e1;">Professional Working Proficiency (Technical Leadership & International Collaboration)</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
